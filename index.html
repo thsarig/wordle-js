@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff
+        }
+
+
+        .tile[data-animation='pop'] {
+            animation-name: PopIn;
+            animation-duration: 100ms;
+        }
+
+        @keyframes PopIn {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            40% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+        }
+
+        .tile[data-animation='flip-in'] {
+            animation-name: FlipIn;
+            animation-duration: 250ms;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes FlipIn {
+            0% {
+                transform: rotateX(0);
+            }
+
+            100% {
+                transform: rotateX(-90deg);
+            }
+        }
+
+        .tile[data-animation='flip-out'] {
+            animation-name: FlipOut;
+            animation-duration: 250ms;
+            animation-timing-function: ease-in;
+        }
+
+        @keyframes FlipOut {
+            0% {
+                transform: rotateX(-90deg);
+            }
+
+            100% {
+                transform: rotateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased">
+    <h1 class="text-3xl mx-auto font-bold text-center pb-2 mt-2 mb-6 border-b border-slate-500">WORDLE</h1>
+    <div id="grid" class="w-full"></div>
+    <div id="keyboard" class="w-full mt-12"></div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
